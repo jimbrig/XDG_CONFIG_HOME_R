@@ -32,7 +32,7 @@ setHook("rstudio.sessionInit", function(newSession) {
     message("RStudio Version: ", rstudioapi::getVersion())
 }, action = "append")
 
-if (interactive() && curl::has_internet()) invisible(installr::check.for.updates.R(GUI = FALSE))
+# if (interactive() && curl::has_internet()) invisible(installr::check.for.updates.R(GUI = FALSE))
 
 # r-cli
 if (nzchar(Sys.getenv("R_CMD")) && require("rcli", quietly = TRUE)) rcli::r_cmd_call()

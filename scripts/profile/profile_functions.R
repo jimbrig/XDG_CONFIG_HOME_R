@@ -18,7 +18,7 @@ editrenv <- function() {
 }
 
 editextras <- function() {
-  file.edit(r_config_dir("scripts/rprofile_extras.R"))
+  file.edit(r_config_dir("scripts/profile/profile_functions.R"))
 }
 
 editsecrets <- function() {
@@ -160,3 +160,4 @@ sandbox <- function(rstudio = TRUE) {
   path <- fs::path_home("Dev/sandbox")
   if (rstudio) rstudioapi::filesPaneNavigate("~/Dev/sandbox") else explorer(path)
 }
+
