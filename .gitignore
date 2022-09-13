@@ -5,6 +5,6 @@
 config.yml
 secrets.Renviron
 .Rhistory
-cache/*
-lib/4.1/*
-lib/4.2/*
+cache/**
+lib/4.1/**
+lib/4.2/**
