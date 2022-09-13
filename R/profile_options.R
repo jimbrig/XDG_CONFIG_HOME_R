@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : R Options
@@ -13,7 +12,7 @@ options(
   repos = c(CRAN = "https://cran.rstudio.com"),
   # parallel package installations
   # run Sys.getenv("NUMBER_OF_PROCESSORS") or parallel::detectCores()
-  Ncpus = max(as.integer(Sys.getenv("NUMBER_OF_PROCESSORS")) - 2, 1),
+  Ncpus = as.integer(Sys.getenv("NUMBER_OF_PROCESSORS")) - 2L,
   # As of R 4.2 default "wininet" download method is deprecated on Windows
   # see <https://developer.r-project.org/blosxom.cgi/R-devel/2021/05/26>
   download.file.method = "libcurl",
@@ -32,21 +31,11 @@ options(
   orcid = "0000-0002-7489-8787"
 )
 
-# for bcputility package:
-options(bcputility.bcp.path = "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/bcp.exe")
-
 # Set Options:
-source(r_config_dir("scripts/options/addinit_options.R"))
-source(r_config_dir("scripts/options/blogdown_options.R"))
-source(r_config_dir("scripts/options/gargle_options.R"))
-source(r_config_dir("scripts/options/radian_options.R"))
-source(r_config_dir("scripts/options/shrtcts_options.R"))
-source(r_config_dir("scripts/options/usethis_options.R"))
-source(r_config_dir("scripts/options/vscode_options.R"))
-
-# list.files(
-#   r_config_dir("scripts/options"),
-#   "*_options.R",
-#   full.names = TRUE
-# ) |>
-#   lapply(function(x) { invisible({ source(normalizePath(x)) }) })
+source(r_config_dir("R/profile_options_addinit.R"))
+source(r_config_dir("R/profile_options_blogdown.R"))
+source(r_config_dir("R/profile_options_gargle.R"))
+source(r_config_dir("R/profile_options_radian.R"))
+source(r_config_dir("R/profile_options_shrtcts.R"))
+source(r_config_dir("R/profile_options_usethis.R"))
+source(r_config_dir("R/profile_options_vscode.R"))

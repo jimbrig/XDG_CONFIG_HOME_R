@@ -1,67 +1,32 @@
-# open_repo <- jimstools::open_gh_repo
 
-# r_config_dir <- function(...) {
-#   normalizePath(
-#     file.path(
-#       Sys.getenv("R_CONFIG_DIR", unset = normalizePath("~/.config/R")),
-#       ...
-#     )
-#   )
-# }
+#  ------------------------------------------------------------------------
+#
+# Title : R Profile Extras
+#    By : Jimmy Briggs
+#  Date : 2022-07-30
+#
+#  ------------------------------------------------------------------------
 
-editrconfig <- function() {
-  setwd(r_config_dir())
-  rstudioapi::openProject(".", TRUE)
-}
+open_repo <- jimstools::open_gh_repo
 
 editrprof <- function() {
-  file.edit(r_config_dir(".Rprofile"))
+  file.edit("~/.R/.Rprofile")
 }
 
 editrenv <- function() {
-  file.edit(r_config_dir(".Renviron"))
+  file.edit("~/.R/.Renviron")
 }
 
 editextras <- function() {
-  file.edit(r_config_dir("scripts/profile/profile_functions.R"))
+  file.edit("~/.R/rprofile_extras.R")
 }
 
 editsecrets <- function() {
-  file.edit(r_config_dir("secrets/secrets.Renviron"))
+  file.edit("~/.R/secrets.Renviron")
 }
 
 editshortcuts <- function() {
   file.edit(getOption("shrtcts.path"))
-}
-
-#' @title Clear
-#' @name clear
-#' @description clear the active terminal
-#' @noRD
-clear <- function() {
-  cmds <- list("unix" = "clear", "windows" = "cls")
-  system(cmds[[.Platform$OS.type]])
-}
-
-#' @title Quietly Load Package
-#' @name library2
-#' @description suppress messages when loading a package
-#' @param pkg the name of the package
-#' @noRd
-library2 <- function(pkg) {
-  suppressPackageStartupMessages(library(pkg, character.only = TRUE))
-}
-
-
-#' @title Remove2
-#' @name rm2
-#' @description Force remove all objects from the current environment
-#' @param except optional an array of object names to ignore
-#' @noRd
-rm2 <- function(except = NULL) {
-  ignore <- c("clear", "library2", "rm2")
-  if (!is.null(except)) ignore <- c(ignore, except)
-  rm(list = setdiff(ls(envir = .GlobalEnv), ignore), envir = .GlobalEnv)
 }
 
 reload_rstudio <- function() {
@@ -101,6 +66,8 @@ explorer <- function(path = getwd()) {
     invisible(shell(paste0("explorer ", y), intern = TRUE))
   })
 }
+
+expl <- explorer
 
 view_path <- function() {
   writeLines(strsplit(Sys.getenv("PATH"), ";")[[1]])
@@ -157,6 +124,10 @@ search_ghr <- function(s, ...) {
   search_gh(s, language = "R")
 }
 
+search_tychobra <- function(s, ...) {
+  search_gh(s, org = "tychobra")
+}
+
 search_cran <- function(s, ...) {
   browseURL(paste0("https://github.com/cran/", s))
 }
@@ -165,31 +136,3 @@ sandbox <- function(rstudio = TRUE) {
   path <- fs::path_home("Dev/sandbox")
   if (rstudio) rstudioapi::filesPaneNavigate("~/Dev/sandbox") else explorer(path)
 }
-
-# Google Calendar ---------------------------------------------------------
-set_gcal_config <- function(to = c("personal", "pwc")) {
-
-  pre <- list(
-    "GOOGLE_CLIENT_ID" = Sys.getenv("GOOGLE_CLIENT_ID"),
-    "GOOGLE_CLIENT_SECRET" = Sys.getenv("GOOGLE_CLIENT_SECRET")
-  )
-
-  to = match.arg(to)
-
-  if (to == "personal") {
-    Sys.setenv(GOOGLE_CLIENT_ID = Sys.getenv("GCAL_CLIENT_ID_PERSONAL"))
-    Sys.setenv(GOOGLE_CLIENT_SECRET = Sys.getenv("GCAL_CLIENT_SECRET_PERSONAL"))
-    message("Google Calendar using PERSONAL environment variables")
-  }
-  if (to == "pwc") {
-    Sys.setenv(GOOGLE_CLIENT_ID = Sys.getenv("GCAL_CLIENT_ID_PWC"))
-    Sys.setenv(GOOGLE_CLIENT_SECRET = Sys.getenv("GCAL_CLIENT_SECRET_PWC"))
-    message("Google Calendar using PWC environment variables")
-  }
-
-  return(invisible(pre))
-
-}
-
-
-
