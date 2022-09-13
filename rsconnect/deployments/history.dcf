@@ -1,0 +1,94 @@
+name: shinyastp
+title:
+username:
+account: jimbrig
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6680842
+bundleId: 6125157
+url: https://jimbrig.shinyapps.io/shinyastp/
+when: 1658538499.19471
+lastSyncTime: 1658538499.19473
+appPath: C:\Users\jbriggs010\Dev\pwc\Repos\shinyASTP
+
+name: jimsghstars
+title: jimsghstars
+username:
+account: jimsshinyapps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6450709
+bundleId: 5988060
+url: https://jimsshinyapps.shinyapps.io/jimsghstars/
+when: 1654666847.17899
+lastSyncTime: 1654666847.17901
+appPath: C:\Users\jbriggs010\Dev\jimbrig\jimsghstars\app
+
+name: jimsghstars
+title: jimsghstars
+username:
+account: jimsshinyapps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6450709
+bundleId: 5988058
+url: https://jimsshinyapps.shinyapps.io/jimsghstars/
+when: 1654666748.40113
+lastSyncTime: 1654666748.40115
+appPath: C:\Users\jbriggs010\Dev\jimbrig\jimsghstars\app
+
+name: jimsghstars
+title: jimsghstars
+username:
+account: jimsshinyapps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6450709
+bundleId: 5988041
+url: https://jimsshinyapps.shinyapps.io/jimsghstars/
+when: 1654666189.87923
+lastSyncTime: 1654666189.87924
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data/2021-09-21-jimbrig-github-starred-repos.qs|deploy.R|deps.yaml|Dockerfile|generate_stars.R
+appPath: C:\Users\jbriggs010\Dev\jimbrig\jimsghstars\app
+
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/911767/c524b88d56174e339d01a46bd9fc3460
+bundleId: https://api.rpubs.com/api/v1/document/911767/c524b88d56174e339d01a46bd9fc3460
+url: http://rpubs.com/jimbrig/911767
+when: 1654614265.1855
+lastSyncTime: 1654614265.18551
+appPath: C:/Users/jbriggs010/Dev/test.Rmd
+
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/911767/c524b88d56174e339d01a46bd9fc3460
+bundleId: https://api.rpubs.com/api/v1/document/911767/c524b88d56174e339d01a46bd9fc3460
+url: http://rpubs.com/jimbrig/911767
+when: 1654614212.77293
+lastSyncTime: 1654614212.77294
+appPath: C:/Users/jbriggs010/Dev/test.Rmd
+
+name: Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/911767/c524b88d56174e339d01a46bd9fc3460
+bundleId: https://api.rpubs.com/api/v1/document/911767/c524b88d56174e339d01a46bd9fc3460
+url: http://rpubs.com/publish/claim/911767/427fa05f738041b8a7923c49553390c3
+when: 1654614041.57081
+lastSyncTime: 1654614041.57082
+appPath: C:/Users/jbriggs010/Dev/test.Rmd
+
